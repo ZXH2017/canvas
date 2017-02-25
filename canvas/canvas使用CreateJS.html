@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="js/easeljs-0.8.2.min.js"></script>
+		<script type="text/javascript">
+			var canvas, stage, txt;
+			var count = 0;
+			window.onload = function() {
+				canvas = document.getElementById("canvas");
+				stage = new createjs.Stage(canvas);
+				txt = new createjs.Text("number->",
+					"20p Arial", "#ff7700");
+				stage.addChild(txt);
+				createjs.Ticker.setFPS(30);
+				createjs.Ticker.addEventListener("tick", tick);
+			}
+
+			function tick(e) {
+				count++;
+				txt.text = "number->" + count + "!";
+				stage.update();
+			}
+		</script>
+	</head>
+
+	<body>
+		<canvas id="canvas" style="width: 500;height: 500;"></canvas>
+	</body>
+
+</html>

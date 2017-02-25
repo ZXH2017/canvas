@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<style type="text/css">
+		canvas{
+			width: 500px;
+			height: 500px;
+		}
+	</style>
+	<script type="text/javascript">
+		function draw(id){
+			var canvas=document.getElementById(id);
+			if(canvas==null){
+				return false;
+			}
+			var context=canvas.getContext("2d");
+			context.fillStyle="#eeeeef";
+			context.fillRect(0,0,500,500);
+			context.translate(150,30);
+			context.fillStyle="rgba(255,0,0,0.25)";
+			for(var i=0;i<=50;i++){
+				context.translate(10,10);
+				context.scale(0.95,0.95);
+				context.rotate(Math.PI/10);
+				context.fillRect(0,0,80,50);
+				
+			}
+		}
+	</script>
+	<body onload="draw('canvas')">
+		<canvas id="canvas"></canvas>
+	</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<script>
+		function draw(){
+			var canvas=document.getElementById("can");
+			var cxt=canvas.getContext("2d");
+			
+			var ll=cxt.createLinearGradient(100,100,50,300);
+			ll.addColorStop(0,"red");
+			ll.addColorStop(0.5,"blue");
+			ll.addColorStop(1,"green");
+			cxt.fillStyle=ll;
+			cxt.fillRect(100,100,50,300);
+			
+			cxt.fillStyle="burlywood";
+			cxt.fillRect(150,200,150,100);
+			
+			var ll=cxt.createLinearGradient(100,100,50,300);
+			ll.addColorStop(0,"red");
+			ll.addColorStop(0.5,"blue");
+			ll.addColorStop(1,"green");
+			cxt.fillStyle=ll;
+			cxt.fillRect(300,100,50,300);
+			
+			cxt.beginPath();
+			cxt.fillStyle="#FF0000";
+			cxt.arc(225,250,40,0,Math.PI*2,false);
+			cxt.closePath();
+			cxt.fill();
+			
+			cxt.fillStyle="blue";
+			cxt.fillRect(210,150,25,100);
+			
+			cxt.beginPath();
+			cxt.moveTo(225,50);
+			cxt.lineTo(225,70);
+			cxt.closePath();
+			cxt.stroke();
+			
+			cxt.beginPath();
+			cxt.moveTo(225,90);
+			cxt.lineTo(225,110);
+			cxt.closePath();
+			cxt.stroke();
+			
+			cxt.beginPath();
+			cxt.moveTo(225,130);
+			cxt.lineTo(225,150);
+			cxt.closePath();
+			cxt.stroke();
+		}
+	</script>
+	<body onload="draw()">
+		<canvas id="can" width="500" height="500" style="background: gainsboro;"></canvas>
+	</body>
+</html>

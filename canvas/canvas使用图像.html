@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			canvas{
+				width: 500px;
+				height: 500px;
+			}
+		</style>
+		<script type="text/javascript">
+			function draw(id){
+				var canvas=document.getElementById(id);
+				if(canvas==null){
+					return false;
+				}
+				var context=canvas.getContext("2d");
+				context.fillStyle="#eeeeef";
+				context.fillRect(0,0,500,500);
+				image=new Image();
+				image.src="img/1.png";
+				image.onload=function(){
+					drawImage(context,image);
+				}
+			}
+			function drawImage(context,image){
+				context.drawImage(image,0,0,50,40);
+				context.drawImage(image,20,20,30,60,70,50,80,80); 
+			}
+		</script>
+	</head>
+	<body onload="draw('canvas')">
+		<canvas id="canvas"></canvas>
+	</body>
+</html>
